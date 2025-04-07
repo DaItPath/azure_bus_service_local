@@ -1,0 +1,10 @@
+docker compose -f "D:\Azure Service Bus local set up\docker-compose.yaml" up -d
+
+"Endpoint=sb://localhost;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"
+
+"Endpoint=sb://192.168.y.z;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"
+
+WSL IP 172.18.160.158
+"Endpoint=sb://172.18.160.158:5672;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=SAS_KEY_VALUE;UseDevelopmentEmulator=true;"
+
+netsh interface portproxy add v4tov4 listenport=5672 listenaddress=0.0.0.0 connectport=5672 connectaddress=172.18.160.158
